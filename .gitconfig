@@ -2,7 +2,7 @@
 [user]
 # Please adapt and uncomment the following lines:
 name = Niels Doucet
-#email = 
+email = niels.doucet@collibra.com
 [merge]
 	renamelimit = 5000
 [branch]
@@ -22,10 +22,12 @@ name = Niels Doucet
 	commit-all = commit -a -m
 	alias-remove = config --global --unset
 	branch-del = branch -d
+	dv = diffview
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset - %C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	logf = log --follow
 	resolve-ours = !sh -c 'git co --ours $0 && git add $0'
 	resolve-theirs = !sh -c 'git co --theirs $0 && git add $0'
-	reset-and-clean = !git reset --hard && git clean-all
-	rac = !git reset-and-clean
 	recent = "!r() { cur=$(git rev-parse --abbrev-ref HEAD); git for-each-ref --sort=committerdate $1 --format='%(color:yellow)%(refname:short)|%(color:bold green)%(committerdate:relative)|%(color:blue)%(subject)|%(color:magenta)%(authorname)%(color:reset)' | sed \"s/m${cur}|/m* ${cur}|/\" | column -ts'|'; }; r ${1:-refs/heads/}"
+[core]
+	ignorecase = false
+	autocrlf = input
