@@ -1,3 +1,4 @@
+ssh-add -A &>/dev/null
 test -f ~/.git-completion.bash && . $_
 test -f ~/.gradle-tab-completion.bash && . $_
 test -f ~/.brew.bash && . $_
