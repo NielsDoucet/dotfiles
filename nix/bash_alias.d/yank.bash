@@ -1,0 +1,1 @@
+alias yankline='yank -l'
