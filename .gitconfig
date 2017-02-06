@@ -2,7 +2,7 @@
 [user]
 # Please adapt and uncomment the following lines:
 name = Niels Doucet
-email = niels.doucet@collibra.com
+email = <email here>
 [merge]
 	renamelimit = 5000
 [branch]

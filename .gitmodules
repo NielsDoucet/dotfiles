@@ -1,0 +1,3 @@
+[submodule "gradle-completion"]
+	path = gradle-completion
+	url = https://github.com/eriwen/gradle-completion
