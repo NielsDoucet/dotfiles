@@ -1,12 +1,5 @@
 #!/bin/sh
-
-# install homebrew
-
-# install basic brews
-# get them from brews.sh
-
-# install wanted casks
-# get them from casks.sh
+. setupHomebrew.bash
 
 # copy bash profile files
 cp ../.bash_profile ~
