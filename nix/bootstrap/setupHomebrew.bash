@@ -7,6 +7,7 @@ brew cask install virtualbox
 brew cask install vagrant
 brew cask install wireshark
 
+brew install jq
 brew install node
 brew install git
 brew install python3
@@ -19,3 +20,4 @@ brew install p7zip
 brew install tree
 brew install wget
 brew install yank
+brew install thefuck
