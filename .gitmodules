@@ -1,3 +1,6 @@
 [submodule "gradle-completion"]
 	path = gradle-completion
 	url = https://github.com/eriwen/gradle-completion
+[submodule "docker-cli"]
+	path = docker-cli
+	url = https://github.com/docker/cli.git
