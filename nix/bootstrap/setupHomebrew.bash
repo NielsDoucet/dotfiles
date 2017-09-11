@@ -1,7 +1,6 @@
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 brew cask install java
-brew cask install intellij-idea
 brew cask install gimp
 brew cask install virtualbox
 brew cask install vagrant
