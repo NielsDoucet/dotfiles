@@ -7,3 +7,6 @@ Run `git clone --recursive -j2 https://github.com/HeadOnAPlate/dotfiles.git`
 ## On mac 
 1. `cd dotfiles/nix/bootstrap`
 2. `sh setupMacEnv.bash`
+
+# todo
+https://github.com/todotxt/todo.txt
