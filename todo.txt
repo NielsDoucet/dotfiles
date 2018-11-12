@@ -1,0 +1,7 @@
+(A) 2018-11-12 adapt bash_completion setup +bootstrap
+2018-11-12 add tap install +homebrew
+2018-11-12 make brew list dynamic +homebrew
+2018-11-12 rework brew install mechanism +homebrew
+2018-11-12 change up basic installation mechanism +bootstrap
+2018-11-12 add .ssh set up aid +bootstrap
+2018-11-12 list applications to install +bootstrap
