@@ -1,34 +1,48 @@
-# This is Git's per-user configuration file.
 [user]
-# Please adapt and uncomment the following lines:
-name = Niels Doucet
-email = <email here>
+	name = Niels Doucet
 [merge]
 	renamelimit = 5000
 [branch]
 	autosetuprebase = always
 [alias]
-	st = status
-	diff-pretty = diff --stat
-	diff-list = diff --name-status
-	branch-rel = log --graph --simplify-by-decoration --pretty=format:\"%d\" --all
-	latest = log --format=\"%Cred%h %Creset%cr %Cgreen%gs %an %Creset%f\"
 	alias-list = config --get-regexp alias
-	cleanup = fetch -p
-	tag-prune = !git tag -l | xargs git tag -d && git cleanup
-	clean-all = !git clean -f -d && git tag-prune
-	co = checkout
-	push-head = push origin HEAD
-	commit-all = commit -a -m
 	alias-remove = config --global --unset
 	branch-del = branch -d
+	branch-rel = log --graph --simplify-by-decoration --pretty=format:\"%d\" --all
+	clean-all = !git clean -f -d && git tag-prune
+	cleanup = fetch -p
+	co = checkout
+	commit-all = commit -a -m
+	diff-list = diff --name-status
+	diff-pretty = diff --stat
+	# Remove branches that have already been merged
+	dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
 	dv = diffview
+	# Find branches containing commit
+	fb = "!f() { git branch -a --contains $1; }; f"
+	# Find commits by commit message
+	fm = "!f() { git log --pretty=format:'%C(yellow)$h %Cblue%ad %Creset%s%Cgreen [%cn] %Cred%d' --decorate --date=short --grep=$1; }; f"
+	go = checkout -b
+	latest = log --format=\"%Cred%h %Creset%cr %Cgreen%gs %an %Creset%f\"
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset - %C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	logf = log --follow
+	pull-all-submodules = submodule update --remote --recursive
+	push-head = push origin HEAD
+	recent = "!r() { cur=$(git rev-parse --abbrev-ref HEAD); git for-each-ref --sort=committerdate $1 --format='%(color:yellow)%(refname:short)|%(color:bold green)%(committerdate:relative)|%(color:blue)%(subject)|%(color:magenta)%(authorname)%(color:reset)' | sed \"s/m${cur}|/m* ${cur}|/\" | column -ts'|'; }; r ${1:-refs/heads/}"
 	resolve-ours = !sh -c 'git co --ours $0 && git add $0'
 	resolve-theirs = !sh -c 'git co --theirs $0 && git add $0'
-	recent = "!r() { cur=$(git rev-parse --abbrev-ref HEAD); git for-each-ref --sort=committerdate $1 --format='%(color:yellow)%(refname:short)|%(color:bold green)%(committerdate:relative)|%(color:blue)%(subject)|%(color:magenta)%(authorname)%(color:reset)' | sed \"s/m${cur}|/m* ${cur}|/\" | column -ts'|'; }; r ${1:-refs/heads/}"
-        pull-all-submodules = submodule update --remote --recursive
+	s = status -s
+	st = status
+	tag-prune = !git tag -l | xargs git tag -d && git cleanup
 [core]
 	ignorecase = false
 	autocrlf = input
+	trustctime = false
+	whitespace = space-before-tab,trailing-space
+[apply]
+	# Detect whitespace errors when applying a patch
+	whitespace = fix
+[color]
+	ui = auto
+[push]
+	gpgSign = if-asked
