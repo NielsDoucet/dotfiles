@@ -6,3 +6,5 @@
 2018-11-12 add .ssh set up aid +bootstrap
 2018-11-12 list applications to install +bootstrap
 2018-11-16 add sdkman support +bootstrap
+2018-11-26 setup up-to-date bash on mac os +bootstrap +homebrew
+

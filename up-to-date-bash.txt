@@ -1,0 +1,3 @@
+ln -s /usr/local/Cellar/bash/4.4.23/bin/bash /bin/homebrewbash
+???? sudo echo '/bin/homebrewbash' >> /etc/shells
+chsh -s /usr/local/bin/homebrewbash
