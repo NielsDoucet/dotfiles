@@ -2,7 +2,7 @@
 Contains any configuration files.
 Root contains global configuration, subfolders are OS specific.
 
-Run `git clone --recursive -j2 https://github.com/HeadOnAPlate/dotfiles.git`
+Run `git clone --recursive -j2 https://github.com/NielsDoucet/dotfiles.git`
 
 ## On mac 
 1. `cd dotfiles/nix/bootstrap`
